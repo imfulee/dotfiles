@@ -1,0 +1,23 @@
+{
+  "window.titleBarStyle": "custom",
+  "editor.fontFamily": "JetBrainsMono NF",
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "editor.cursorStyle": "block",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "shakram02.bash-beautify"
+  },
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true
+}
