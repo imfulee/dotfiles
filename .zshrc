@@ -58,33 +58,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-
-function ln-image-tags {
-    if [ -z "$1" ]; then
-        echo "usage: ln-image-tags <image-name>"
-        exit 1
-    fi
-    
-    curlie -L https://registry.lawsnote.com/v2/$1/tags/list
-}
-
-function ln-save-image {
-    if [ -z "$1" ]; then
-        echo "usage: ln-save-image <image-name:tag>"
-        exit 1
-    fi
-    
-    docker-save --rm -p -o . -i registry.lawsnote.com/$1
-}
-
-function vpnup {
-    sudo wg-quick up Lawsnote
-}
-
-function vpndown {
-    sudo wg-quick down Lawsnote
-}
-
 function updatesoftware {
     if [ -f "/etc/arch-release" ]; then
         sudo pacman -Syu
