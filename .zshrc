@@ -42,21 +42,26 @@ antigen theme romkatv/powerlevel10k
 # Tell Antigen that you're done.
 antigen apply
 
-# fnm
-export PATH="$HOME/.fnm:$PATH"
-eval "$(fnm env --use-on-cd)" > /dev/null 2>&1
-
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# fnm
+export PATH="$PATH:$HOME/.fnm:"
+eval "$(fnm env --use-on-cd)" > /dev/null 2>&1
+
 # pdm
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+command -v pyenv >/dev/null || export PATH="$PATH:$PYENV_ROOT/bin"
 eval "$(pyenv init -)"
+
+# go
+export PATH="$PATH:$HOME/.local/bin"
+go_root=$HOME/go
+export PATH="$PATH:$go_root/bin"
 
 function updatesoftware {
     if [ -f "/etc/arch-release" ]; then
