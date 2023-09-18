@@ -70,8 +70,10 @@ function updatesoftware {
         sudo pacman -Syu
         yay -Syu
     fi
-    
-    flatpak update -y
+
+    if [ -f "/usr/bin/flatpak" ]; then 
+        flatpak update -y
+    fi 
 }
 
 function updatefirmware {
